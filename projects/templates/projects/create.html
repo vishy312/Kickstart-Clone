@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Start Your Project</h1>
+<form method="post" action="{% url 'create' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+  Title
+  <br>
+  <input type="text" name="title" maxlength="40">
+  <br>
+  Details
+  <br>
+  <input type="text" name="details">
+  <br>
+  Category
+  <br>
+  <input type="text" name="category" maxlength="20">
+  <br>
+  Image
+  <br>
+  <input type="file" name="image" >
+  <br>
+  <br>
+  <input type="submit" name="create" value="Start Project">
+</form>
+
+{% endblock %}
